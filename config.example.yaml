@@ -1,0 +1,107 @@
+# Profile name is for your reference
+profile: fullstack-pro
+
+system:
+  install_rosetta_if_needed: true
+  xcode_clt: true
+
+github:
+  install_gh_cli: true
+  auth:
+    method: device   # device | token | skip
+    token_env: GH_TOKEN
+  git:
+    set_name_email: false
+    name: "Jane Dev"
+    email: "jane@example.com"
+  ssh:
+    generate: true
+    key_type: ed25519
+    comment: "macos-sh-scripts"
+    upload_to_github: false  # requires gh auth
+
+ai:
+  aider: true               # pipx install aider-chat (Claude)
+  gh_copilot_cli: true      # gh extension install github/gh-copilot
+  llm_cli: false            # pipx install llm + llm-anthropic plugin
+
+browsers:
+  arc: true
+  chrome: false
+  firefox_dev: false
+
+terminal:
+  warp: true
+  iterm2: false
+  starship: true
+  tmux: true
+  fonts:
+    tap_cask_fonts: true
+    jetbrains_mono: true
+    fira_code: false
+
+editors:
+  jetbrains_toolbox: true
+  intellij_ultimate: true
+  vscode: true
+  xcode: false # If true, will install from Mac App Store (mas). You must be logged in.
+
+languages:
+  node:
+    manager: fnm           # fnm | nvm | volta (we implement fnm best)
+    versions: ["lts", "22"]
+    default: "lts"
+    globals: ["npm-check-updates", "typescript", "eslint", "prettier", "pnpm", "yarn", "vite"]
+  python:
+    use_pyenv: true
+    versions: ["3.12.5"]
+    pipx: ["aider-chat", "httpie"]
+  java:
+    temurin_versions: [21] # 21, 17
+    build_tools: ["maven", "gradle"]
+  go: true
+  rust: true
+
+web_tooling:
+  angular_cli: true        # npm: @angular/cli
+  react_tooling: true      # npm: vite, create-next-app
+  typescript: true
+  tailwind: false
+
+devops:
+  docker: "docker-desktop" # docker-desktop | colima | none
+  kubernetes: ["kubectl", "helm", "k9s"]
+  iac: ["terraform"]       # terraform | opentofu
+  cloud_clis: ["awscli", "azure-cli", "google-cloud-sdk"]
+
+databases:
+  servers: []              # e.g., ["postgresql", "redis"]
+  clients_cli: ["pgcli"]   # e.g., ["pgcli","mycli"]
+  clients_gui: ["dbeaver"] # dbeaver | tableplus | postico | sequel-ace | beekeeper
+
+productivity:
+  raycast: true
+  rectangle: true
+  slack: false
+  zoom: false
+
+extras:
+  shellcheck: true
+  shfmt: true
+  pre_commit: true
+  direnv: true
+  jq: true
+  yq: true
+  httpie: true
+  wget: true
+
+app_store:
+  enabled: false
+  apps:
+    # Xcode: 497799835
+    - { id: 497799835, name: "Xcode" }
+
+brew:
+  taps: []
+  formulae: []
+  casks: []
